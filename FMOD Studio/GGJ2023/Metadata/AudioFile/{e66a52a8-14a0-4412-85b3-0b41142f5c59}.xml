@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e66a52a8-14a0-4412-85b3-0b41142f5c59}">
+		<property name="assetPath">
+			<value>MuertePaleta.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3844897959183673</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5a103be6-08ce-41cb-8509-3475a9709ecd}</destination>
+		</relationship>
+	</object>
+</objects>

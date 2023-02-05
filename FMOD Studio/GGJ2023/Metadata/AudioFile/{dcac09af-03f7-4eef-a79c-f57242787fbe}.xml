@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dcac09af-03f7-4eef-a79c-f57242787fbe}">
+		<property name="assetPath">
+			<value>SelfHurt.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.40625850340136055</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5a103be6-08ce-41cb-8509-3475a9709ecd}</destination>
+		</relationship>
+	</object>
+</objects>

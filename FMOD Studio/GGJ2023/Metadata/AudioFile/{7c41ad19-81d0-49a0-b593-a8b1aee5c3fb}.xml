@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7c41ad19-81d0-49a0-b593-a8b1aee5c3fb}">
+		<property name="assetPath">
+			<value>Muerte_Diccionario.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.2008843537414964</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5a103be6-08ce-41cb-8509-3475a9709ecd}</destination>
+		</relationship>
+	</object>
+</objects>
