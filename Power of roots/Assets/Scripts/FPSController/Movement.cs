@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float sprintSpeed = 6f;
     [SerializeField] float acceleration = 10f;
     float rbDrag = 6f;
+    [HideInInspector] public bool canMove = true;
 
     [Header("Keybinds")]
     [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
@@ -33,9 +34,11 @@ public class Movement : MonoBehaviour
 
     private void Update() {
 
-        MyInput();
-        ControlDrag();
-        ControlSpeed();
+        if (canMove) {  
+            MyInput();
+            ControlDrag();
+            ControlSpeed();
+        }
     }
 
     void ControlDrag()

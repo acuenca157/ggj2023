@@ -13,6 +13,7 @@ public class EasyRhythmAudioManagerCustom : MonoBehaviour
     public EventReference eventLow; // A reference to the FMOD event we want to use
     public EventReference eventTransition; // A reference to the FMOD event we want to use
     public EventReference eventLobby; // A reference to the FMOD event we want to use
+    public EventReference eventDie; // A reference to the FMOD event we want to use
     public EasyEvent myAudioEvent; // EasyEvent is the object that will play the FMOD audio event, and provide our callbacks and other related info
 
     public bool startEventOnAwake = false;
@@ -27,13 +28,21 @@ public class EasyRhythmAudioManagerCustom : MonoBehaviour
         // Passes the EventReference so EasyEvent can create the FMOD Event instance
         // Passes an array of listeners through (IEasyListener) so the audio event knows which objects want to listen to the callbacks
         myAudioEvent = new EasyEvent(eventLobby.Path, myEventListeners);
+        myAudioEvent.stop();
 
         if (startEventOnAwake)
             myAudioEvent.start();
     }
 
-    public void changeMusic(float health, bool isLobby) {
-        if (isLobby)
+    public void changeMusic(float health, bool isLobby, bool died = false) {
+        if (died)
+        {
+            lastType = "died";
+            myAudioEvent.stop();
+            myAudioEvent = new EasyEvent(eventDie.Path, myEventListeners);
+            myAudioEvent.start();
+        }
+        else if (isLobby)
         {
             lastType = "lobby";
             myAudioEvent.stop();

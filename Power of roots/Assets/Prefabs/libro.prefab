@@ -146,6 +146,7 @@ MonoBehaviour:
       Data3: 859073456
       Data4: -46496566
     Path: event:/Enemies/Die/libro_die
+  expAmt: 10
 --- !u!65 &7228018957075887147
 BoxCollider:
   m_ObjectHideFlags: 0

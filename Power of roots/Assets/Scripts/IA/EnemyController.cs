@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float damageAmt = 5f, damageWaitTime = 0.5f;
     [Range(0f, 5f)] [SerializeField] private float attackRadio = 2f;
     [SerializeField] private EventReference eventMuere;
+    [SerializeField] private float expAmt;
 
     private bool muerto = false;
 
@@ -48,6 +49,7 @@ public class EnemyController : MonoBehaviour
             if (vidaActual <= 0)
             {
                 muerto = true;
+                player.exp += expAmt;
                 roundController.CheckForEndRound();
                 FMODUnity.RuntimeManager.PlayOneShot(eventMuere);
                 animator.SetTrigger("muere");

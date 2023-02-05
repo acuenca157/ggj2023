@@ -25,7 +25,6 @@ public class GunController : MonoBehaviour, IEasyListener
 
     public void OnBeat(EasyEvent audioEvent) 
 	{ 
-		print("Beat: " + audioEvent.CurrentBeat.ToString());
         Shoot();
 	}
     private void Update()

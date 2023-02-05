@@ -146,6 +146,7 @@ MonoBehaviour:
       Data3: 555910068
       Data4: -299538984
     Path: event:/Enemies/Die/paleta_die
+  expAmt: 15
 --- !u!65 &7228018957075887147
 BoxCollider:
   m_ObjectHideFlags: 0

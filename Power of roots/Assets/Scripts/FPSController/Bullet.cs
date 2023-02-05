@@ -5,7 +5,8 @@ using FMODUnity;
 
 public class Bullet : MonoBehaviour
 {
-    public float life = 3;
+    private PlayerLiveController plc;
+    public float life;
     [SerializeField] private Color[] colores;
     [SerializeField] private Sprite[] sprites;
     [SerializeField] private float damage = 50f;
@@ -14,7 +15,9 @@ public class Bullet : MonoBehaviour
     private SpriteRenderer sprite;
     void Awake()
     {
-       Destroy(this.gameObject, life);
+        plc = FindObjectOfType<PlayerLiveController>();
+        life = plc.bulletLife;
+        Destroy(this.gameObject, life);
     }
 
     private void Start()

@@ -146,6 +146,7 @@ MonoBehaviour:
       Data3: -392316273
       Data4: 786409197
     Path: event:/Enemies/Die/porro_die
+  expAmt: 20
 --- !u!65 &7228018957075887147
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -146,6 +146,7 @@ MonoBehaviour:
       Data3: -1422665085
       Data4: 1458324640
     Path: event:/Enemies/Die/corchea_die
+  expAmt: 5
 --- !u!65 &7228018957075887147
 BoxCollider:
   m_ObjectHideFlags: 0

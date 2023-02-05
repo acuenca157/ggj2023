@@ -10,10 +10,11 @@ public class RoundsController : MonoBehaviour
     [SerializeField] private int startEnemiesCount = 5;
     private float lastEnemiesCount, actualEnemiesCount;
     [SerializeField] private float roundMultiplier = 1.25f;
-    private int roundCounter = 1;
+    [HideInInspector] public int roundCounter = 1;
     private SpawnEnemies spawnController;
     [SerializeField] private GameObject persianas;
     [SerializeField] private EventReference eventPersiana;
+    private UpgradeSystem us;
 
     public void StartRound() {
         print("Inicio ronda " + roundCounter);
@@ -31,7 +32,8 @@ public class RoundsController : MonoBehaviour
 
     void endRound() {
         FMODUnity.RuntimeManager.PlayOneShot(eventPersiana);
-        er.changeMusic(plc.life, true);
+        us.usedInRound = false;
+        er.changeMusic(plc.Life, true);
         persianas.SetActive(false);
         lastEnemiesCount = Mathf.Floor(lastEnemiesCount * roundMultiplier);
         roundCounter++;
@@ -40,8 +42,9 @@ public class RoundsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        plc = FindAnyObjectByType<PlayerLiveController>();
-        er = FindAnyObjectByType<EasyRhythmAudioManagerCustom>();
+        us = FindObjectOfType<UpgradeSystem>();
+        plc = FindObjectOfType<PlayerLiveController>();
+        er = FindObjectOfType<EasyRhythmAudioManagerCustom>();
         lastEnemiesCount = startEnemiesCount;
         lastEnemiesCount = startEnemiesCount;
         spawnController = GetComponent<SpawnEnemies>();
@@ -50,7 +53,7 @@ public class RoundsController : MonoBehaviour
 
     IEnumerator StartRoundCorrutine() {
         yield return new WaitForSeconds(1.0f);
-        er.changeMusic(plc.life, false);
+        er.changeMusic(plc.Life, false);
         persianas.SetActive(true);
         FMODUnity.RuntimeManager.PlayOneShot(eventPersiana);
         actualEnemiesCount = lastEnemiesCount;
